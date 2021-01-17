@@ -1,9 +1,13 @@
 const mongoose=require('mongoose');
-const ATLAS_DATABASE_USR=process.env.ATLAS_DATABASE_USR;
-console.log(process.env)
-console.log(ATLAS_DATABASE_USR)
-const old='mongodb://localhost/rerovaji'
-mongoose.connect(old, { useNewUrlParser: true ,useUnifiedTopology: true})
+
+
+
+
+
+const database_url=process.env.DATABASE_URL;
+
+console.log(database_url)
+mongoose.connect(database_url, { useNewUrlParser: true ,useUnifiedTopology: true})
 .then(db=>{
     console.log('Conexion establecida con la base de datos')
 })

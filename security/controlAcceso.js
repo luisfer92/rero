@@ -10,4 +10,4 @@ const ac=new controlAcceso(grant_list)
 
 
 exports.controlAcceso=ac
-exports.secret="galletita"
+exports.secret=process.env.CONTROL_ACCESO_SECRET
