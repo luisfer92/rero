@@ -7,8 +7,10 @@ const initialaizer=async ()=>{
     if(hasAdmin.length===0){
         const aName=process.env.DEFAULT_ADMIN_NAME;
         const aPWD=process.env.DEFAULT_ADMIN_PWD;
-        const admin=new Usuario({nombre:"admin",correo:"admin@yahoo.es",rol:"ADMIN"})
-        admin.setPassword("galletita")
+        const aMail=process.env.DEFAULT_ADMIN_MAIL;
+
+        const admin=new Usuario({nombre:aName,correo:aMail,rol:"ADMIN"})
+        admin.setPassword(aPWD)
         await admin.save()
     }else{
         console.log("Administrador en bd")
